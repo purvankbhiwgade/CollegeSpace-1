@@ -45,8 +45,12 @@ function App() {
             <Home user={user} />
           </Route>
 
-          <Route exact path="/learnspace">
+          {/* <Route exact path="/learnspace">
             {user ? <Head /> : <Redirect to="/Signup" />}
+          </Route> */}
+
+          <Route exact path="/learnspace">
+            {<Head />}
           </Route>
 
           <Route exact path="/Signup">

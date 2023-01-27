@@ -1,7 +1,7 @@
 import React from "react";
 import Typical from "react-typical";
 import "./Chathero.css";
-import Arrow from "../UI elements/Arrow";
+// import Arrow from "../UI elements/Arrow";
 
 const Chathero = () => {
   return (

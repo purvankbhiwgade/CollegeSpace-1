@@ -27,6 +27,7 @@ router.get("/currentUser", function (req, res, next) {
 });
 
 router.post("/express-signup", function (req, res, next) {
+  console.log(req.body)
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
@@ -47,7 +48,7 @@ router.post("/express-signup", function (req, res, next) {
         .updateProfile({
           displayName: username,
           photoURL:
-            "https://techpowerusa.com/wp-content/uploads/2017/06/default-user.png",
+            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fen%2Fsearch%3Fq%3Duser&psig=AOvVaw0znoLiIEr7KtQyPsKPoT7Z&ust=1674923899026000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPi-0vGX6PwCFQAAAAAdAAAAABAE",
         })
         .then(() => {
           db.collection("users")

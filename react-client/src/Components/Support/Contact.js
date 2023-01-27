@@ -12,8 +12,8 @@ const Contact = () => {
   const handleSubmit = (e) => {
     setIsPending(true);
     e.preventDefault();
-    if(name=="") {alert("Enter your name");return;}
-    if(message=="") {alert("Enter your message");return;}
+    if(name==="") {alert("Enter your name");return;}
+    if(message==="") {alert("Enter your message");return;}
 
     axios.post('http://localhost:3001/users/feedback',{name,message}).then((res)=>{
       if(res.data.error) throw Error(res.data.error)

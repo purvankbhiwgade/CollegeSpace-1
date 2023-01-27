@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Typography, Container, makeStyles, Box } from "@material-ui/core";
+import { Typography, Container, Box } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         color: "white",
         textAlign: "left",
@@ -26,33 +27,33 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-const CommentList = [
-    {
-        name: "Rebel",
-        text: "Thank you for this blog",
-        time: Date()
-    },
-    {
-        name: "Rebel",
-        text: "Thank you for this blog",
-        time: Date()
-    },
-    {
-        name: "Rebel",
-        text: "Thank you for this blog",
-        time: Date()
-    },
-    {
-        name: "Rebel",
-        text: "Thank you for this blog",
-        time: Date()
-    },
-]
+// const CommentList = [
+//     {
+//         name: "Rebel",
+//         text: "Thank you for this blog",
+//         time: Date()
+//     },
+//     {
+//         name: "Rebel",
+//         text: "Thank you for this blog",
+//         time: Date()
+//     },
+//     {
+//         name: "Rebel",
+//         text: "Thank you for this blog",
+//         time: Date()
+//     },
+//     {
+//         name: "Rebel",
+//         text: "Thank you for this blog",
+//         time: Date()
+//     },
+// ]
 
 
 const Singlepost = (props) => {
-    const [comments, setComments] = useState(CommentList);
-    const [newComment, updateNewComment] = useState();
+    // const [comments, setComments] = useState(CommentList);
+    // const [newComment, updateNewComment] = useState();
     const [pending, setPending] = useState(true);
     const { id } = useParams();
     const [blog, setBlog] = useState(null);
@@ -68,23 +69,23 @@ const Singlepost = (props) => {
         });
     }, [])
 
-    const handleChange = (e) => {
-        updateNewComment(e.target.value)
-    }
+    // const handleChange = (e) => {
+    //     updateNewComment(e.target.value)
+    // }
 
-    const handleClick = (e) => {
-        e.preventDefault()
-        console.log(e.target)
-        setComments([
-            {
-                name: "New User",
-                text: newComment,
-                time: Date()
-            },
-            ...comments,
-        ])
-        console.log(comments)
-    }
+    // const handleClick = (e) => {
+    //     e.preventDefault()
+    //     console.log(e.target)
+    //     setComments([
+    //         {
+    //             name: "New User",
+    //             text: newComment,
+    //             time: Date()
+    //         },
+    //         ...comments,
+    //     ])
+    //     console.log(comments)
+    // }
     const classes = useStyles()
     
     if(!pending && blog!=null)

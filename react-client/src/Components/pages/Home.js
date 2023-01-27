@@ -13,7 +13,8 @@ function Home(props) {
   return (
     <>
       <HeroSection />
-      <Cards user={props.user} />
+      {/* <Cards user={props.user} /> */}
+      <Cards />
       <Footer />
     </>
   );

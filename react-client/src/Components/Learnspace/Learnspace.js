@@ -1,15 +1,8 @@
-import {
-  AppBar,
-  makeStyles,
-  Toolbar,
-  Popover,
-  Button,
-  Paper,
-  Grid,
-} from "@material-ui/core";
-import SearchBar from "material-ui-search-bar";
+import { AppBar, Toolbar, Popover, Button, Paper, Grid } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
+// import SearchBar from "material-ui-search-bar";
 import React, { useState, useEffect } from "react";
-import TuneIcon from "@material-ui/icons/Tune";
+import TuneIcon from "@mui/icons-material/Tune";
 import Filters from "./Filters";
 import ContentCard from "./ContentCard";
 import Fuse from "fuse.js";
@@ -18,36 +11,36 @@ import axios from "axios";
 
 // List of Content
 const initialContentList = [
-  // {
-  //     title: "Signals and System",
-  //     author: "B.P.Lathi",
-  //     type: 'books',
-  // },
-  // {
-  //     title: "Signals and System",
-  //     author: "Deergharao",
-  //     type: 'books',
-  // },
-  // {
-  //     title: "Advanced Mathematics (baccho ke liye)",
-  //     author: "H.K.Das",
-  //     type: 'books',
-  // },
-  // {
-  //     title: "Physics",
-  //     author: "Wavhal",
-  //     type: 'books',
-  // },
-  // {
-  //     title: "Chemistry",
-  //     author: "Sujhathap",
-  //     type: 'books',
-  // },
-  // {
-  //     title: "Engineering mathematics",
-  //     author: "Yadav Kamble",
-  //     type: 'books',
-  // },
+  {
+      title: "Signals and System",
+      author: "B.P.Lathi",
+      type: 'books',
+  },
+  {
+      title: "Signals and System",
+      author: "Deergharao",
+      type: 'books',
+  },
+  {
+      title: "Advanced Mathematics (baccho ke liye)",
+      author: "H.K.Das",
+      type: 'books',
+  },
+  {
+      title: "Physics",
+      author: "Wavhal",
+      type: 'books',
+  },
+  {
+      title: "Chemistry",
+      author: "Sujhathap",
+      type: 'books',
+  },
+  {
+      title: "Engineering mathematics",
+      author: "Yadav Kamble",
+      type: 'books',
+  },
 ];
 
 // type of filters
@@ -61,10 +54,10 @@ const allFilters = {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-    "& .MuiToolBar-root": {
-      justifyContent: "center",
-    },
+    // backgroundColor: theme.palette.background.paper,
+    // "& .MuiToolBar-root": {
+    //   justifyContent: "center",
+    // },
   },
   paper: {
     background: "white",
@@ -91,10 +84,11 @@ const Learnspace = () => {
   const [contentList, setContentList] = useState(initialContentList);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/users/getbooks").then((response) => {
-      console.log(response.data);
-      setContentList(response.data);
-    });
+    // axios.get("http://localhost:3001/users/getbooks").then((response) => {
+    //   console.log(response.data);
+    //   setContentList(response.data);
+    // });
+    setContentList(initialContentList);
   }, []);
 
   const classes = useStyles();
@@ -160,12 +154,12 @@ const Learnspace = () => {
   console.log(values.year, filterByYear, "filterByYear");
   console.log(contentResults);
   // console.log(results);
-  const handleOnRequestSearch = () => {
-    // console.log(filterByYear)
-  };
+  // const handleOnRequestSearch = () => {
+  //   console.log(filterByYear)
+  // };
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+        <AppBar position="static">
         <Toolbar className={classes.paper}>
           <Grid container>
             {/* <Typography style={{ color: "black" }}>
@@ -173,7 +167,7 @@ const Learnspace = () => {
             </Typography> */}
             <Grid item xs={1} md={3}></Grid>
             <Grid item xs={9} md={6}>
-              <SearchBar
+              {/* <SearchBar
                 maxWidth="1000px"
                 name="query"
                 value={query}
@@ -181,7 +175,7 @@ const Learnspace = () => {
                 onCancelSearch={handleCancelSearch}
                 className={classes.search}
                 placeholder="Search"
-              />
+              /> */}
             </Grid>
             <Grid item xs={2} md={2}>
               <Grid item md={2}></Grid>
@@ -219,9 +213,66 @@ const Learnspace = () => {
           />
         </Paper>
       </Popover>
-      <ContentCard contentList={filterByYear} />
     </div>
-  );
-};
-
-export default Learnspace;
+    );
+  };
+  
+  export default Learnspace;
+  
+  // <div className={classes.root}>
+  //   <AppBar position="static">
+  //     <Toolbar className={classes.paper}>
+  //       <Grid container>
+  //         <Typography style={{ color: "black" }}>
+  //           Back to CollegeSpace
+  //         </Typography>
+  //         <Grid item xs={1} md={3}></Grid>
+  //         <Grid item xs={9} md={6}>
+  //           <SearchBar
+  //             maxWidth="1000px"
+  //             name="query"
+  //             value={query}
+  //             onRequestSearch={handleRequestSearch}
+  //             onCancelSearch={handleCancelSearch}
+  //             className={classes.search}
+  //             placeholder="Search"
+  //           />
+  //         </Grid>
+  //         <Grid item xs={2} md={2}>
+  //           <Grid item md={2}></Grid>
+  //           <Button onClick={handleOnClick}>
+  //             <TuneIcon />
+  //           </Button>
+  //         </Grid>
+  //       </Grid>
+  //     </Toolbar>
+  //   </AppBar>
+  //   <Popover
+  //     open={open}
+  //     anchorE1={anchorE1}
+  //     onClose={handleClose}
+  //     anchorOrigin={{
+  //       vertical: "center",
+  //       horizontal: "center",
+  //     }}
+  //     transformOrigin={{
+  //       vertical: "center",
+  //       horizontal: "center",
+  //     }}
+  //   >
+  //     <Paper
+  //       style={{
+  //         padding: "20px",
+  //         background: "#f6f6f6",
+  //         maxWidth: "900px",
+  //       }}
+  //     >
+  //       <Filters
+  //         values={values}
+  //         setValues={setValues}
+  //         handleChange={handleChange}
+  //       />
+  //     </Paper>
+  //   </Popover>
+  //   <ContentCard contentList={filterByYear} />
+  // </div>

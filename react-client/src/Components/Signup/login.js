@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Footer from "../Homepage/Footer";
 import "./login.css";
 import LoginForm from "./LoginForm";
 
@@ -16,8 +15,8 @@ const Login = (props) => {
     console.log(details);
 
     if (
-      details.email == adminUser.email &&
-      details.password == adminUser.password
+      details.email === adminUser.email &&
+      details.password === adminUser.password
     ) {
       console.log("Logged in");
       setUser({
@@ -36,7 +35,7 @@ const Login = (props) => {
 
   return (
     <div className="App">
-      {user.email != "" ? (
+      {user.email !== "" ? (
         <div className="welcome">
           <h2>
             Welcome, <span>{user.name}</span>

@@ -1,4 +1,4 @@
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import "./Pagination.css";
 import { Link } from "react-router-dom";

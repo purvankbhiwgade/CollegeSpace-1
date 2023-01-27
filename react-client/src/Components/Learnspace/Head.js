@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../Homepage/Footer";
 import Learnspace from "./Learnspace";
-import Learn_hero from "./Learn_hero";
+import LearnHero from "./LearnHero";
 
 const Head = () => {
   window.scroll({
@@ -11,7 +11,7 @@ const Head = () => {
   });
   return (
     <>
-      <Learn_hero />
+      <LearnHero />
       <Learnspace />
       <Footer />
     </>

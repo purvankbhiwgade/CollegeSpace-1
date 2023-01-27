@@ -1,7 +1,7 @@
-import { Card } from "@material-ui/core";
+import { Card } from "@mui/material";
 import React from "react";
-import ContentCard_item from "./ContentCard_item";
-import { Grid } from "@material-ui/core";
+import ContentCardItem from "./ContentCardItem";
+import { Grid } from "@mui/material";
 
 const ContentCard = ({ contentList }) => {
   return (
@@ -12,7 +12,7 @@ const ContentCard = ({ contentList }) => {
             {contentList.length >= 1 ? (
               contentList.map((content) => (
                 <Grid item xs={6} md={4}>
-                  <ContentCard_item
+                  <ContentCardItem
                     srce={content.img}
                     text={content.name}
                     description={content.author}

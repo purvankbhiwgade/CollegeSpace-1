@@ -1,8 +1,7 @@
 import React from "react";
 import Footer from "../Homepage/Footer";
-
 import Contact from "./Contact";
-import Support_hero from "./Support_hero";
+import SupportHero from "./SupportHero";
 
 const Support = () => {
   window.scroll({
@@ -12,7 +11,7 @@ const Support = () => {
   });
   return (
     <>
-      <Support_hero />
+      <SupportHero />
       <Contact />
       <Footer />
     </>

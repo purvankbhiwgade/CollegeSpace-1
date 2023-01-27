@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../Homepage/Footer";
-import Society_cards from "./Society_cards";
-import Society_hero from "./Society_hero";
+import SocietyCards from "./SocietyCards";
+import SocietyHero from "./SocietyHero";
 
 const Society = () => {
   window.scroll({
@@ -11,8 +11,8 @@ const Society = () => {
   });
   return (
     <>
-      <Society_hero />
-      <Society_cards />
+      <SocietyHero />
+      <SocietyCards />
       <Footer />
     </>
   );

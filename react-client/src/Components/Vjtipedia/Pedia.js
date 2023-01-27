@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../Homepage/Footer";
-import Pedia_hero from "./Pedia_hero";
-import Pedia_info from "./Pedia_info";
+import PediaHero from "./PediaHero";
+import PediaInfo from "./PediaInfo";
 
 const Pedia = () => {
   window.scroll({
@@ -11,8 +11,8 @@ const Pedia = () => {
   });
   return (
     <>
-      <Pedia_hero />;
-      <Pedia_info />;
+      <PediaHero />;
+      <PediaInfo />;
       <Footer />;
     </>
   );
